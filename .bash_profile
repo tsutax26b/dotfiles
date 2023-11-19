@@ -13,7 +13,7 @@ if [ -f "${HOME}/.bashrc" ]; then
 fi
 
 # global environments
-HISTFILESIZE=10000
-HISTTIMEFORMAT='%F %T '
-HISTCONTROL=ignoreboth
-HISTIGNORE="history"
+export HISTFILESIZE=10000
+export HISTTIMEFORMAT='%F %T '
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="history"
