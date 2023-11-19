@@ -149,7 +149,6 @@ main() {
     # docker without sudo 
     [ ! $(cat /etc/group | grep docker) ] && sudo groupadd docker
     sudo usermod -aG docker ${USER}
-    newgrp docker
     install_minikube
     source "${HOME}/.bash_profile"
 }
