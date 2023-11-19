@@ -41,7 +41,6 @@ backup_dotfiles() {
     local -r destination_dir="${HOME}/dotfiles_backup_${backup_datetime}"
     local -r source_dir="${HOME}"
     mkdir "${destination_dir}"
-
     for target in "${targets[@]}"; do
         if [ -f "${source_dir}/${target}" ]; then
             cp "${source_dir}/${target}" "${destination_dir}/"
@@ -110,10 +109,6 @@ install_docker() {
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    # docker without sudo 
-    sudo groupadd docker
-    sudo usermod -aG docker ${USER}
-    newgrp docker
 }
 
 install_minikube() {
@@ -151,6 +146,10 @@ main() {
     apply_dotfiles
     install_github_cli
     install_docker
+    # docker without sudo 
+    [ ! $(cat /etc/group | grep docker) ] && sudo groupadd docker
+    sudo usermod -aG docker ${USER}
+    newgrp docker
     install_minikube
     source "${HOME}/.bash_profile"
 }
