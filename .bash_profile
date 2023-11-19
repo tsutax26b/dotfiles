@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ]; then
   PATH="${PATH}:${HOME}/bin"
@@ -12,7 +12,8 @@ if [ -f "${HOME}/.bashrc" ]; then
   source "${HOME}/.bashrc"
 fi
 
-## start services
-services=(
-    docker
-)
+# global environments
+HISTFILESIZE=10000
+HISTTIMEFORMAT='%F %T '
+HISTCONTROL=ignoreboth
+HISTIGNORE="history"

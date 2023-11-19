@@ -5,4 +5,4 @@
     editor = code
     excluedfile = ~/.gitignore
 [credential]
-    gitHubHelper = 
+    gitHubHelper =
