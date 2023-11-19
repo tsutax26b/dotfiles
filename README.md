@@ -9,12 +9,10 @@ tsutax26b's Dot Files
 
 ## Installation
 
-> [!NOTE] \
-> If you're using WSL, please execute the following command in PowerShell.
+### (Optional) install wsl (ubuntu distribution) 
 
 ```powershell
 PS C:xxx/yyy > wsl --install Ubuntu-22.04
-PS C:xxx/yyy > wsl
 ```
 
 ### main
