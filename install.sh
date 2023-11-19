@@ -141,12 +141,12 @@ main() {
         exit 1
     fi
     local -r dotfiles_path="$(realpath "${1:-"${HOME}/dotfiles"}")"
-    # install_uitilities
-    # download_dotfiles
-    # backup_dotfiles
-    # apply_dotfiles
-    # install_github_cli
-    # install_docker
+    install_uitilities
+    download_dotfiles
+    backup_dotfiles
+    apply_dotfiles
+    install_github_cli
+    install_docker
     install_minikube
     source "${HOME}/.bash_profile"
 }
