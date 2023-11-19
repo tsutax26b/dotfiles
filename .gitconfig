@@ -4,5 +4,3 @@
 [core]
     editor = code
     excluedfile = ~/.gitignore
-[credential]
-    gitHubHelper =
