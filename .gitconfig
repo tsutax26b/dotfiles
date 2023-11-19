@@ -1,0 +1,8 @@
+[user]
+    name = "tsutax26b"
+    email = "tsutax26b@gmail.com"
+[core]
+    editor = code
+    excluedfile = ~/.gitignore
+[credential]
+    gitHubHelper = 
